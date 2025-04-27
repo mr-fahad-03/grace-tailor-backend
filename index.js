@@ -30,6 +30,10 @@ mongoose
   .catch((err) => console.error("Could not connect to MongoDB", err))
 
 // Routes
+app.get("/hello", (req, res) => {
+  res.send("Hello, World!");
+});
+
 app.use("/api/auth", authRoutes)
 app.use("/api/orders", orderRoutes)
 app.use("/api/customers", customerRoutes)
