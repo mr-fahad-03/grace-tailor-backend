@@ -47,4 +47,5 @@ router.post("/login", async (req, res) => {
   }
 })
 
-export default authRoutes;
+module.exports = router;
+
