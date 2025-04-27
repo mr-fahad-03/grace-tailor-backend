@@ -16,11 +16,12 @@ const app = express()
 // Middleware
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "*", // Add your frontend URL in .env for better security
+    origin: "https://grace-tailor-shop.vercel.app", // Frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true, // if your API needs to support cookies/session
   })
-)
+);
 app.use(express.json())
 
 // Connect to MongoDB
